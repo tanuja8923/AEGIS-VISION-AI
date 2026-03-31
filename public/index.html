@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AEGIS | Aiding Every Glimpse Into Sight</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onclick="startVoice()">
+
+    <div id="login-screen">
+        <div class="login-card">
+            <h1 style="font-family: 'Syncopate'; font-size: 1.3rem; color: var(--neon); margin-bottom: 5px;">AEGIS</h1>
+            <p style="font-size: 0.75rem; opacity: 0.7; margin-bottom: 8px;">Aiding Every Glimpse Into Sight</p>
+            <p style="font-size: 0.75rem; opacity: 0.7; margin-bottom: 15px;">Guardian Security Setup</p>
+            <input type="text" id="gName" placeholder="Guardian Name">
+            <input type="tel" id="gPhone" placeholder="Emergency Phone (+91...)">
+            <input type="email" id="gEmail" placeholder="Guardian Email">
+            <input type="text" id="gAddress" placeholder="User's City/Address">
+            <button class="btn-main" onclick="register()">ACTIVATE DEVICE</button>
+        </div>
+    </div>
+
+    <div id="main-app">
+        <video id="webcam" autoplay playsinline></video>
+        <div id="ui-layer">
+            <header style="font-family: 'Syncopate'; font-size: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                <span>AEGIS <small style="font-size:0.55rem; opacity:0.6; font-family:Inter;">Aiding Every Glimpse Into Sight</small></span>
+                <span id="sos-tag" style="color: var(--pink); display: none;">SOS ACTIVE</span>
+            </header>
+
+            <div class="orb-box">
+                <div id="ai-orb"><i class="fas fa-microphone"></i></div>
+            </div>
+
+            <div id="panel">
+                <div id="status">System Online</div>
+                <div id="output">Tap anywhere to speak</div>
+                <nav>
+                    <div class="nav-item" onclick="resetApp()"><i class="fas fa-sign-out-alt"></i><span>Reset</span></div>
+                    <div class="nav-item sos" onclick="triggerEmergency()"><i class="fas fa-radiation"></i><span>Emergency</span></div>
+                    <div class="nav-item active"><i class="fas fa-brain"></i><span>AI Vision</span></div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
